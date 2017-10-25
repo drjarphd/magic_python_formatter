@@ -4,7 +4,7 @@ def format_text(n):
     # DEFINITION: Takes a string as input and splits the
     # string into a list. The list items are then sent to
     # capital_case where they are capitalized individually
-    new_string = re.split('; |, ',n)
+    new_string = re.split(' ',n)
     for x in new_string:
         capital_case(x)
         print(capital_case(x))

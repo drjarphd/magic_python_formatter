@@ -8,7 +8,7 @@ def index(text):
     '''
     for dex in range(0,len(text)):
         count = text[dex]        
-        if (count == ":"):
+        if (count == ":") | (count == "?") :
             return (dex+2)
 
 def format_text(n):
@@ -61,32 +61,15 @@ file_open = open("input1.txt","r")
 
 ## Read lines of file
 entered_list = file_open.readlines()
+first_part = entered_list[:23]
+second_part = entered_list[24:]
+del first_part[12],first_part[11],first_part[0]
 
+access_code, first_name, middle_name, last_name, other_name, ssn_dob, gender, prev_eval, prev_ref, being_sent, address, apt, city, state, zip_code, country_primary_email,secondary_email, phone, phone2, fax = first_part
 
-access_code = entered_list[1]
-first_name = entered_list[2]
-middle_name = entered_list[3]
-last_name = entered_list[4]
-other_name = entered_list[5]
-ssn_dob = entered_list[6]
-gender = entered_list[7]
-prev_eval = entered_list[8]
-prev_ref = entered_list[9]
-being_sent = entered_list[10]
-address = entered_list[13]
-apt = entered_list[14]
-city = entered_list[15]
-state = entered_list[16]
-zip_code = entered_list[17]
-country_primary_email = entered_list[18]
-secondary_email = entered_list[19]
-phone = entered_list[20]
-phone2 = entered_list[21]
-
-sample_string = "this is a SAMPLE string to test the pRoGrAm"
-second_sample_string = "The quick brown fox jumps over the lazy dog"
-sample_number = 1815276125
-
+# sample_string = "this is a SAMPLE string to test the pRoGrAm"
+# second_sample_string = "The quick brown fox jumps over the lazy dog"
+# sample_number = 1815276125
 
 print(access_code[index(access_code):])
 print(capital_case(first_name[index(first_name):]) + capital_case(middle_name[index(middle_name):]) + upper_case(last_name[index(last_name):]) )
